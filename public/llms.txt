@@ -1,0 +1,19 @@
+# 健衡学园
+
+> ICAK 国际应用肌动学（Applied Kinesiology）中文培训体系，提供 PAK 线下模块课程、线上预习与国际认证培训。
+
+## 课程
+- [关于PAK（课程介绍）](https://icak.com.cn/course): AK 是什么、60 余年临床验证、健康金三角与课程体系
+- [课程中心](https://icak.com.cn/course-center): 线下课程排期、模块 1-2 报名与费用
+- [PAK知识库](https://icak.com.cn/knowledge): 45 种常见病症的 AK 诊疗方法
+
+## 认证
+- [关于PAK - 认证路径](https://icak.com.cn/course): DÄGAK / ICAK 国际认证体系说明
+
+## 常见问题
+- [FAQ问答](https://icak.com.cn/faq): 报名、费用、认证、学习路径、临床技术常见问题
+
+## 更多
+- [学习资料](https://icak.com.cn/research): AK 经典教材与科普读物
+- [学员课堂](https://icak.com.cn/student-scenes): 课程实拍与学员风采
+- [课程咨询](https://icak.com.cn/contact): 预约咨询表单

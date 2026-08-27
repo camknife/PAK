@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node"
+import { getRecords } from "../lib/wecom.ts"
 
 type CourseStatus = "open" | "upcoming" | "closed"
 
@@ -15,14 +16,7 @@ interface Course {
   earlyBird: string
 }
 
-interface FeishuText {
-  text?: string
-}
-
-interface FeishuSelect {
-  text?: string
-}
-
+// 企业微信智能表格单元格值：文本/单选字段为 [{text:"..."}]，数字字段直接是数字
 function getText(value: unknown): string {
   if (value === null || value === undefined) return ""
   if (typeof value === "string") return value
@@ -32,7 +26,7 @@ function getText(value: unknown): string {
       .map((item) => {
         if (typeof item === "string") return item
         if (item && typeof item === "object") {
-          return (item as FeishuText).text ?? ""
+          return (item as { text?: string }).text ?? ""
         }
         return ""
       })
@@ -40,7 +34,7 @@ function getText(value: unknown): string {
       .join(", ")
   }
   if (typeof value === "object") {
-    return (value as FeishuText).text ?? (value as FeishuSelect).text ?? String(value)
+    return (value as { text?: string }).text ?? String(value)
   }
   return String(value)
 }
@@ -77,44 +71,6 @@ function mapStatus(statusText: string): CourseStatus | "cancelled" | null {
   }
 }
 
-async function getTenantAccessToken(appId: string, appSecret: string): Promise<string> {
-  const res = await fetch("https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      app_id: appId,
-      app_secret: appSecret,
-    }),
-  })
-
-  const data = (await res.json()) as { code: number; msg?: string; tenant_access_token?: string }
-
-  if (data.code !== 0 || !data.tenant_access_token) {
-    throw new Error(`Feishu auth failed: ${data.msg ?? "unknown error"}`)
-  }
-
-  return data.tenant_access_token
-}
-
-async function fetchFeishuRecords(token: string, appToken: string, tableId: string): Promise<Record<string, unknown>[]> {
-  const url = `https://open.feishu.cn/open-apis/bitable/v1/apps/${appToken}/tables/${tableId}/records?page_size=500`
-  const res = await fetch(url, {
-    headers: { Authorization: `Bearer ${token}` },
-  })
-
-  const data = (await res.json()) as {
-    code: number
-    msg?: string
-    data?: { items?: { fields: Record<string, unknown> }[] }
-  }
-
-  if (data.code !== 0) {
-    throw new Error(`Feishu records failed: ${data.msg ?? "unknown error"}`)
-  }
-
-  return data.data?.items?.map((item) => item.fields) ?? []
-}
-
 function mapCourse(fields: Record<string, unknown>): Course | null {
   const name = getText(fields["课程名称"])
   const statusText = getText(fields["报名状态"])
@@ -146,18 +102,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: "Method not allowed" })
   }
 
-  const FEISHU_APP_ID = process.env.FEISHU_APP_ID
-  const FEISHU_APP_SECRET = process.env.FEISHU_APP_SECRET
-  const FEISHU_APP_TOKEN = process.env.FEISHU_APP_TOKEN
-  const FEISHU_TABLE_ID = process.env.FEISHU_TABLE_ID
+  const WECOM_COURSE_DOCID = process.env.WECOM_COURSE_DOCID
+  const WECOM_COURSE_SHEET_ID = process.env.WECOM_COURSE_SHEET_ID
 
-  if (!FEISHU_APP_ID || !FEISHU_APP_SECRET || !FEISHU_APP_TOKEN || !FEISHU_TABLE_ID) {
-    return res.status(500).json({ error: "Missing Feishu configuration" })
+  if (!WECOM_COURSE_DOCID || !WECOM_COURSE_SHEET_ID) {
+    return res.status(500).json({ error: "Missing Wecom course configuration" })
   }
 
   try {
-    const token = await getTenantAccessToken(FEISHU_APP_ID, FEISHU_APP_SECRET)
-    const records = await fetchFeishuRecords(token, FEISHU_APP_TOKEN, FEISHU_TABLE_ID)
+    const records = await getRecords(WECOM_COURSE_DOCID, WECOM_COURSE_SHEET_ID)
     const courses = records.map(mapCourse).filter((c): c is Course => c !== null)
 
     res.setHeader("Content-Type", "application/json")

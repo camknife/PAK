@@ -20,8 +20,8 @@ if [ "$1" = "first" ]; then
   mkdir -p "$DIST_DIR" "$FRONT_DIR"
   echo "目录已创建：$APP_DIR"
   echo "请手动把代码 clone 到 $FRONT_DIR："
-  echo "  git clone git@github.com:CambridgeFoldingKnife/PAK.git $FRONT_DIR"
-  echo "并在 $FRONT_DIR/.env 中填入飞书配置后："
+  echo "  git clone https://github.com/camknife/PAK.git $FRONT_DIR"
+  echo "并在 $FRONT_DIR/.env 中填入企业微信智能表格配置后："
   echo "  pm2 start server.mjs --name pak-api --update-env"
   exit 0
 fi

@@ -45,7 +45,7 @@ function HealthTriangle() {
               健康金三角
             </h2>
             <p className="font-['Noto_Sans_SC',sans-serif] text-base text-[#6B6B62] leading-relaxed">
-              AK 通过手法肌肉测试，从结构、化学与心理三个维度交叉排查身体失衡的根源。
+              PAK 通过手法肌肉测试，从结构、化学与心理三个维度交叉排查身体失衡的根源。
               这不是三个独立的系统，而是一个相互交织的整体——任何一个维度的失衡都会在其他维度产生连锁反应。
             </p>
           </div>
@@ -294,7 +294,7 @@ export default function CoursePage() {
             应用肌动学入门
           </p>
           <h1 className="hero-title font-['Noto_Serif_SC',serif] text-5xl lg:text-6xl font-semibold leading-[1.12] text-foreground mb-6">
-            {"关于 AK".split("").map((char, i) => (
+            {"关于 PAK".split("").map((char, i) => (
               <span key={i} className="inline-block overflow-hidden align-bottom">
                 <span className="inline-block hero-char">
                   {char === " " ? " " : char}
@@ -360,7 +360,7 @@ export default function CoursePage() {
                   认证体系时间线
                 </p>
                 <h3 className="font-['Noto_Serif_SC',serif] text-xl lg:text-2xl font-semibold text-foreground mb-8">
-                  AK 六十载发展历程
+                  PAK 六十载发展历程
                 </h3>
                 <div className="relative">
                   <div className="timeline-line absolute left-0 top-0 bottom-0 w-px bg-[#4A7F7B]/30" />
@@ -669,7 +669,7 @@ export default function CoursePage() {
 
             <div className="prose-custom space-y-5 mb-10">
               <p className="font-['Noto_Sans_SC',sans-serif] text-base text-[#4A4A45] leading-relaxed">
-                全系列 AK 认证课程共 <strong className="text-foreground font-medium">6 大模块</strong>，
+                全系列 PAK 认证课程共 <strong className="text-foreground font-medium">6 大模块</strong>，
                 合计 <strong className="text-foreground font-medium">240 学时</strong>（含线上预习、线下实操、复训与作业）。
                 每个模块 <strong className="text-foreground font-medium">3 天面授</strong>，教学主题由 DÄGAK 认证讲师安排。
               </p>
@@ -704,7 +704,7 @@ export default function CoursePage() {
 
             <div className="bg-[#F5F5F0] border border-border rounded-sm p-6">
               <p className="font-['Noto_Sans_SC',sans-serif] text-sm text-[#6B6B62] leading-relaxed">
-                模块 1–2 已开放报名，模块 3–6 将陆续开设。完成全部 6 大模块，即完成 AK 认证课程体系的学习。
+                模块 1–2 已开放报名，模块 3–6 将陆续开设。完成全部 6 大模块，即完成 PAK 认证课程体系的学习。
               </p>
             </div>
           </div>

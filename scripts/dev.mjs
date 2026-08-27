@@ -89,7 +89,7 @@ const server = createServer(async (req, res) => {
 })
 
 server.listen(API_PORT, () => {
-  console.log(`[dev-api] Feishu API server ready at http://localhost:${API_PORT}`)
+  console.log(`[dev-api] Wecom smartsheet API server ready at http://localhost:${API_PORT}`)
 })
 
 const viteBin = path.join(root, "node_modules", "vite", "bin", "vite.js")

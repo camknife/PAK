@@ -36,13 +36,13 @@ export default function KnowledgePage() {
           <section className="pt-32 lg:pt-40 pb-16">
             <div className="max-w-[1200px] mx-auto px-6">
               <p className="font-['Noto_Sans_SC',sans-serif] text-xs font-medium tracking-[0.15em] uppercase text-accent mb-6">
-                AK Knowledge Base
+                PAK Knowledge Base
               </p>
               <h1 className="font-['Noto_Serif_SC',serif] text-5xl lg:text-6xl font-semibold leading-[1.12] text-foreground mb-6">
-                AK知识库
+                PAK知识库
               </h1>
               <p className="font-['Noto_Sans_SC',sans-serif] text-base text-[#6B6B62] leading-relaxed max-w-[620px]">
-                45种常见病症的AK诊疗方法
+                45种常见病症的PAK诊疗方法
               </p>
             </div>
           </section>
@@ -115,7 +115,7 @@ export default function KnowledgePage() {
                               <Field label="原因" text={desc.reason} />
                               <Field label="标准治疗" text={desc.standard} />
                               <div className="sm:col-span-2">
-                                <Field label="AK方法" text={desc.ak} />
+                                <Field label="PAK方法" text={desc.ak} />
                               </div>
                             </div>
                           ) : (

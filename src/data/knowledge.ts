@@ -10,7 +10,7 @@ export const kbItems: Record<CategoryKey, string[]> = {
   lower: [
     "跟腱炎",
     "前交叉韧带问题",
-    "AK膝关节诊疗方法",
+    "PAK膝关节诊疗方法",
     "踝关节扭伤",
     "髌骨软骨软化",
     "髂胫束综合征",
@@ -83,9 +83,9 @@ export const kbDescriptions: Record<string, KnowledgeItem> = {
     standard: "手术重建、物理康复",
     ak: "评估膝关节周围肌肉平衡（股四头肌与腘绳肌），检查髋关节与踝关节的联动",
   },
-  "AK膝关节诊疗方法": {
+  "PAK膝关节诊疗方法": {
     symptoms: "膝关节各类疼痛与功能障碍",
-    desc: "AK系统化的膝关节评估与治疗方法",
+    desc: "PAK系统化的膝关节评估与治疗方法",
     reason: "结构、化学或心理因素导致的膝关节问题",
     standard: "对症治疗",
     ak: "通过肌肉测试判断膝关节问题的根源，区分结构/化学/心理因素，针对性治疗",

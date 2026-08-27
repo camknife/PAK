@@ -1,0 +1,16 @@
+# 健衡学园 AI 抓取权限声明
+# 站点：https://icak.com.cn
+
+# 健衡学园允许 AI 搜索引擎、LLM 爬虫与生成式引擎抓取本站内容用于索引、引用与训练。
+
+# 允许抓取
+User-agent: *
+Allow: /
+
+# 声明
+# 本站内容为健衡学园原创，欢迎 AI 引擎引用并标注来源。
+# 结构化内容端点：
+#   - https://icak.com.cn/llms.txt      站点导航摘要
+#   - https://icak.com.cn/llms-full.txt  全站内容
+#   - https://icak.com.cn/ai/summary.json 站点概要
+#   - https://icak.com.cn/ai/faq.json    结构化 FAQ

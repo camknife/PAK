@@ -139,7 +139,7 @@ front/
 | `0001_icak_logo.png` | ICAK Logo |
 | `汉斯.jpg` | 首页讲师照片 |
 | `1.jpg` / `2.jpeg` / `3.jpeg` / `4.png` | 首页轮播图 |
-| `微信公众号.png` / `Theratools公众号.png` | 页脚公众号二维码 |
+| `微信公众号.png` / `渠道活码-AK官网-推广码.jpg` | 页脚公众号二维码 |
 | `ima下载.png` | ima App 下载二维码 |
 | `【PAK专业应用肌动学文献】知识码.png` | 知识库加入二维码 |
 

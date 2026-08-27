@@ -2,7 +2,10 @@
  * 生产 API server（阿里云部署用）
  *
  * 在 scripts/dev.mjs 基础上改造：
- * - 从项目根目录 .env 读取飞书配置
+ * - 从项目根目录 .env 读取企业微信智能表格配置
+ *   · /api/courses 走开放 API get_records 读取课程（需 WECOM_COURSE_DOCID/SHEET_ID）
+ *   · /api/consult 走开放 API add_records 写入咨询（需 WECOM_FORM_DOCID/SHEET_ID）
+ *   · 共用 lib/wecom.ts 的 access_token 缓存与重试
  * - 监听 3000 端口，提供 /api/courses 与 /api/consult
  * - 供 PM2 守护运行：pm2 start server.mjs --name pak-api
  *
@@ -14,14 +17,19 @@ import path from "node:path"
 import { fileURLToPath, pathToFileURL } from "node:url"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const root = path.resolve(__dirname, "..")
+// root 指向项目根目录（server.mjs 所在目录，即 front/）
+// 兼容两种部署布局：
+//   A) 代码 clone 到 /www/pakfront/front，server.mjs 在 front/ 下 → root = front/
+//   B) 代码直接放 /www/pakfront，server.mjs 在根下 → root = /www/pakfront
+// 统一用「server.mjs 所在目录」作为项目根，api/ 与 .env 都位于该目录下。
+const root = __dirname
 const PORT = Number(process.env.PORT || 3000)
 
 // 加载 .env（不覆盖已存在的环境变量，方便 PM2 里用 ecosystem 覆盖）
 function loadEnv() {
   const envFile = path.join(root, ".env")
   if (!fs.existsSync(envFile)) {
-    console.warn("[warn] 未找到 .env，飞书 API 将不可用")
+    console.warn("[warn] 未找到 .env，企业微信智能表格 API 将不可用")
     return
   }
   for (const line of fs.readFileSync(envFile, "utf8").split(/\r?\n/)) {

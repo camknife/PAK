@@ -17,7 +17,7 @@ function Hero() {
           2027 年线下课程排期
         </h1>
         <p className="font-['Noto_Sans_SC',sans-serif] text-base text-[#6B6B62] leading-relaxed max-w-[600px]">
-          线下实操与线上理论学习，系统掌握 AK 技术。每期限额 24 人，选择适合你的城市与班次。
+          线下实操与线上理论学习，系统掌握 PAK 技术。每期限额 24 人，选择适合你的城市与班次。
         </p>
         <p className="mt-4 inline-flex items-center gap-2 bg-white/60 border border-border rounded-sm px-4 py-2.5 text-sm font-['Noto_Sans_SC',sans-serif] text-[#4A4A45]">
           <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
@@ -32,8 +32,8 @@ function Hero() {
             <div className="flex items-start gap-3 flex-1">
               <span className="mt-1 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
               <p className="font-['Noto_Sans_SC',sans-serif] text-sm text-[#4A4A45] leading-relaxed">
-                <strong className="text-foreground font-medium">报名即送价值 16000 元线上预习课程（共 7 小时）</strong>，
-                计入 AK 认证课程 240 学时体系，面授前打好理论根基。
+                <strong className="text-foreground font-medium">报名即送价值 5000 元线上预习课程（共 7 小时）</strong>，
+                计入 PAK 认证课程 240 学时体系，面授前打好理论根基。
               </p>
             </div>
             <div className="flex items-start gap-3 flex-1">

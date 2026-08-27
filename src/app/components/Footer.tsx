@@ -2,8 +2,8 @@ const footerCols = [
   {
     title: "关于",
     links: [
-      { label: "健衡学园简介", href: "http://jianhengkf.com/lists/50.html" },
-      { label: "PAK 联盟（治疗师目录）", href: "/pak-union" },
+      { label: "健衡学园简介", href: "http://www.jianhengkf.com/lists/50.html" },
+      // { label: "PAK 联盟（治疗师目录）", href: "/pak-union" }, // 治疗师目录模块暂缓
     ],
   },
   {
@@ -35,8 +35,8 @@ export default function Footer() {
                 <span className="font-['Noto_Sans_SC',sans-serif] text-xs text-[#6B6B62]">微信公众号</span>
               </div>
               <div className="flex flex-col items-center gap-1.5">
-                <img src="/assets/Theratools公众号.png" alt="Theratools" className="h-20 w-auto rounded-sm" />
-                <span className="font-['Noto_Sans_SC',sans-serif] text-xs text-[#6B6B62]">Theratools</span>
+                <img src="/assets/渠道活码-AK官网-推广码.jpg" alt="PAK官网推广码" className="h-20 w-auto rounded-sm" />
+                <span className="font-['Noto_Sans_SC',sans-serif] text-xs text-[#6B6B62]">PAK官网推广码</span>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ import "./styles/index.css"
 // ─── 路由级代码分割：每个页面独立 chunk，按需加载 ────────────────────────────
 const App = lazy(() => import("./app/App.tsx"))
 const CoursePage = lazy(() => import("./app/CoursePage.tsx"))
-const AlumniPage = lazy(() => import("./app/AlumniPage.tsx"))
+// const AlumniPage = lazy(() => import("./app/AlumniPage.tsx")) // 治疗师目录模块暂缓
 const FaqPage = lazy(() => import("./app/FaqPage.tsx"))
 const ContactPage = lazy(() => import("./app/ContactPage.tsx"))
 const LiteraturePage = lazy(() => import("./app/LiteraturePage.tsx"))
@@ -43,48 +43,48 @@ function PageLoader() {
 }
 
 // ─── 路由级 SEO meta：每路由 title/description，随路由切换更新 ────────────
-const DEFAULT_TITLE = "健衡学园 | AK应用肌动学国际认证培训"
+const DEFAULT_TITLE = "健衡学园 | PAK应用肌动学国际认证培训"
 
 const PAGE_META: Record<string, { title: string; description?: string }> = {
   "/": {
-    title: "健衡学园 | AK应用肌动学国际认证培训",
+    title: "健衡学园 | PAK应用肌动学国际认证培训",
     description:
-      "健衡学园独家引进ICAK国际应用肌动学（Applied Kinesiology）中文培训体系。提供AK线下模块课程、PAK线上预习、国际认证培训。",
+      "健衡学园独家引进ICAK国际应用肌动学（Applied Kinesiology）中文培训体系。提供PAK线下模块课程、PAK线上预习、国际认证培训。",
   },
   "/course": {
-    title: "关于AK | 什么是应用肌动学 - 健衡学园",
+    title: "关于PAK | 什么是应用肌动学 - 健衡学园",
     description:
       "应用肌动学（AK/PAK）是以徒手肌肉测试为核心诊断工具的整合性临床评估体系，1964年由George Goodheart创立，从结构、化学、心理三个维度评估人体失衡。",
   },
-  "/pak-union": {
-    title: "AK治疗师目录 - 健衡学园",
-    description:
-      "健衡学园AK治疗师目录：收录经PAK应用肌动学认证培训的治疗师，覆盖康复、物理治疗、功能医学等领域。",
-  },
+  // "/pak-union": {
+  //   title: "PAK治疗师目录 - 健衡学园",
+  //   description:
+  //     "健衡学园PAK治疗师目录：收录经PAK应用肌动学认证培训的治疗师，覆盖康复、物理治疗、功能医学等领域。",
+  // }, // 治疗师目录模块暂缓
   "/faq": {
-    title: "FAQ问答 | 关于AK与课程 - 健衡学园",
+    title: "FAQ问答 | 关于PAK与课程 - 健衡学园",
     description: "关于应用肌动学（PAK）、课程体系、认证路径、临床技术、学习方式的常见问题解答。",
   },
   "/contact": {
     title: "课程咨询 - 健衡学园",
-    description: "健衡学园AK应用肌动学课程咨询：预约了解AK线下模块课程、PAK线上预习与国际认证培训。",
+    description: "健衡学园PAK应用肌动学课程咨询：预约了解PAK线下模块课程、PAK线上预习与国际认证培训。",
   },
   "/research": {
-    title: "学习资料 | AK文献 - 健衡学园",
-    description: "应用肌动学（AK）相关文献与学习资料汇总。",
+    title: "学习资料 | PAK文献 - 健衡学园",
+    description: "应用肌动学（PAK）相关文献与学习资料汇总。",
   },
   "/student-scenes": {
     title: "学员课堂 - 健衡学园",
-    description: "健衡学园学员课堂：AK应用肌动学培训课堂实拍与学员风采。",
+    description: "健衡学园学员课堂：PAK应用肌动学培训课堂实拍与学员风采。",
   },
   "/course-center": {
     title: "课程中心 - 健衡学园",
-    description: "健衡学园课程中心：AK应用肌动学线下模块课程、PAK线上预习、国际认证培训体系。",
+    description: "健衡学园课程中心：PAK应用肌动学线下模块课程、PAK线上预习、国际认证培训体系。",
   },
   "/knowledge": {
-    title: "AK知识库 | 45种常见病症的AK诊疗方法 - 健衡学园",
+    title: "PAK知识库 | 45种常见病症的PAK诊疗方法 - 健衡学园",
     description:
-      "AK知识库：45种常见病症的AK诊疗方法，从症状、原因、标准治疗到AK评估视角，系统了解应用肌动学。",
+      "PAK知识库：45种常见病症的PAK诊疗方法，从症状、原因、标准治疗到PAK评估视角，系统了解应用肌动学。",
   },
 }
 
@@ -106,7 +106,7 @@ createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/course" element={<CoursePage />} />
-        <Route path="/pak-union" element={<AlumniPage />} />
+        {/* <Route path="/pak-union" element={<AlumniPage />} /> // 治疗师目录模块暂缓 */}
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/research" element={<LiteraturePage />} />

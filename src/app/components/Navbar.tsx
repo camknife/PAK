@@ -4,11 +4,11 @@ import Magnetic from "@/app/components/Magnetic"
 
 const links = [
   { label: "首页", href: "/" },
-  { label: "关于AK", href: "/course" },
+  { label: "关于PAK", href: "/course" },
   { label: "课程中心", href: "/course-center" },
   { label: "学员课堂", href: "/student-scenes" },
-  { label: "AK知识库", href: "/knowledge" },
-  { label: "AK治疗师目录", href: "/pak-union" },
+  { label: "PAK知识库", href: "/knowledge" },
+  // { label: "PAK治疗师目录", href: "/pak-union" }, // 治疗师目录模块暂缓，砍掉前端入口
   { label: "学习资料", href: "/research" },
   { label: "FAQ问答", href: "/faq" },
 ]

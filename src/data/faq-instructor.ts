@@ -10,7 +10,7 @@ const instructor: FAQCategory = {
       question: "Hans Garten 博士是谁？为什么他的课程值得学习？",
       answer: "Dr. Med. Hans Garten 是全球应用肌动学领域最具影响力的教育者之一：\n\n- 医学博士：1987 年获医学博士学位，专攻运动医学与物理治疗\n- ICAK 资深讲师：1992 年成为 ICAK（国际应用肌动学学院）认证讲师，拥有 30+ 年教学经验\n- DAEGAK 创始人：1996 年创立 DAEGAK（德国应用肌动学学会），担任首任会长，将 PAK 教育体系标准化并推广至全球\n- 权威教材作者：2015 年出版权威教材《应用肌动学：临床诊断与治疗》，已翻译为 9 种语言，是全球 PAK 培训的标准参考书\n- 临床实践者：超过 35 年的临床一线经验\n\n他的教学风格以严谨的科学态度与直觉性的临床洞见相结合，既尊重循证医学标准，又保留应用肌动学对人体整体性的深刻理解。",
       keywords: ["Hans Garten", "讲师", "创始人", "DAEGAK", "ICAK", "权威", "德国"],
-      related: ["icak-chapter", "certification-path", "prerequisite"],
+      related: ["icak-chapter", "certification-path"],
     },
     {
       id: "daga-vs-icak",

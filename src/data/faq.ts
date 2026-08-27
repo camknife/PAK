@@ -5,7 +5,6 @@ import certification from "./faq-certification"
 import clinical from "./faq-clinical"
 import registration from "./faq-registration"
 import comparison from "./faq-comparison"
-import learning from "./faq-learning"
 import instructor from "./faq-instructor"
 
 const faqData: FAQCategory[] = [
@@ -15,7 +14,6 @@ const faqData: FAQCategory[] = [
   clinical,
   registration,
   comparison,
-  learning,
   instructor,
 ]
 

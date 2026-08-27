@@ -39,7 +39,7 @@ function Hero() {
     >
       <motion.div style={{ opacity, y }} className="w-full max-w-[1100px] mx-auto flex flex-col items-center">
         <h1 className="font-['Noto_Serif_SC',serif] text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.12] text-foreground mb-8">
-          {"AK 应用肌动学".split("").map((char, i) => (
+          {"PAK 应用肌动学".split("").map((char, i) => (
             <span key={i} className="inline-block overflow-hidden align-bottom">
               <span className="inline-block hero-char">
                 {char === " " ? " " : char}
@@ -66,7 +66,7 @@ function Hero() {
               to="/course"
               className="inline-flex items-center px-8 py-4 bg-foreground text-[#F5F5F0] font-['Noto_Sans_SC',sans-serif] text-sm lg:text-base font-medium rounded-sm hover:bg-[#333330] transition-colors duration-200"
             >
-              了解 AK
+              了解 PAK
             </Link>
           </Magnetic>
           <Magnetic>
@@ -129,7 +129,7 @@ function WhyPak() {
               { num: "1964", label: "年由 Goodheart 博士创立" },
               { num: "60+", label: "年的临床研究与实践积累" },
               { num: "14", label: "个全球 ICAK 分会" },
-              { num: "45+", label: "种常见病症的 AK 诊疗方法" },
+              { num: "45+", label: "种常见病症的 PAK 诊疗方法" },
             ].map((stat) => (
               <div key={stat.label} className="flex items-baseline gap-4 pb-5 border-b border-border/50">
                 <span

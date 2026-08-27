@@ -194,7 +194,7 @@ export default function AlumniPage() {
               PAK 联盟 · 治疗师目录
             </p>
             <h1 className="font-['Noto_Serif_SC',serif] text-5xl lg:text-6xl font-semibold leading-[1.12] text-foreground mb-6">
-              全国 AK 认证治疗师
+              全国 PAK 认证治疗师
               <br />
               专业目录
             </h1>
@@ -281,7 +281,7 @@ export default function AlumniPage() {
               成为下一个故事的主角
             </h2>
             <p className="font-['Noto_Sans_SC',sans-serif] text-base text-[#6B6B62] mb-10 max-w-[520px] mx-auto leading-relaxed">
-              加入 AK 认证培训，与全国数百位优秀从业者一起，
+              加入 PAK 认证培训，与全国数百位优秀从业者一起，
               用应用肌动学为你的临床工作打开新的可能。
             </p>
             <Link

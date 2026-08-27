@@ -9,7 +9,7 @@ const SITE_URL = "https://icak.com.cn"
  * 设置当前页面的 document.title 与 meta description + canonical。
  *
  * 用法（在页面组件顶部）：
- *   usePageMeta("关于AK | 什么是应用肌动学 - 健衡学园", "应用肌动学（AK）是以徒手肌肉测试为核心诊断工具的整合性临床评估体系。")
+ *   usePageMeta("关于PAK | 什么是应用肌动学 - 健衡学园", "应用肌动学（PAK）是以徒手肌肉测试为核心诊断工具的整合性临床评估体系。")
  *
  * canonical 基于 window.location.pathname 自动推导，无需传参。
  * 对不支持 JS 渲染的爬虫，index.html 里的静态 meta 兜底。
