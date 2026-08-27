@@ -37,7 +37,21 @@ export async function getAccessToken(): Promise<string> {
   }
 
   const url = `${API_BASE}/gettoken?corpid=${encodeURIComponent(corpid)}&corpsecret=${encodeURIComponent(corpsecret)}`
-  const res = await fetch(url)
+  let res: Response
+  try {
+    res = await fetch(url)
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "fetch failed"
+    const cause =
+      err instanceof Error && err.cause
+        ? err.cause instanceof Error
+          ? err.cause.message
+          : JSON.stringify(err.cause)
+        : ""
+    throw new Error(
+      `Wecom gettoken fetch failed: ${cause ? `${message} | cause: ${cause}` : message}`
+    )
+  }
   const data = (await res.json()) as {
     errcode: number
     errmsg?: string
@@ -75,11 +89,24 @@ async function wedocRequest<T = Record<string, unknown>>(
 ): Promise<T> {
   const makeRequest = async (token: string) => {
     const url = `${API_BASE}/wedoc/smartsheet/${pathname}?access_token=${token}`
-    return fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    })
+    try {
+      return await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      })
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "fetch failed"
+      const cause =
+        err instanceof Error && err.cause
+          ? err.cause instanceof Error
+            ? err.cause.message
+            : JSON.stringify(err.cause)
+          : ""
+      throw new Error(
+        `Wecom ${pathname} fetch failed: ${cause ? `${message} | cause: ${cause}` : message}`
+      )
+    }
   }
 
   let token = await getAccessToken()

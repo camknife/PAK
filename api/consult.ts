@@ -10,14 +10,14 @@ interface ConsultPayload {
 }
 
 // 咨询表字段ID（用 field_id 作 key，配合 key_type=FIELD_ID，避开中文字段名匹配问题）
-// 来源：咨询表智能表格的字段属性。若表结构调整，改这里即可。
+// 来源：咨询表智能表格 → 任意列头右键「字段属性」→ 字段ID。若表结构调整，改这里即可。
 const FORM_FIELD_IDS = {
   name: "f04Gwj", // 姓名
   phone: "ftQMc5", // 手机号
   occupation: "ftk5Tx", // 职业背景（单选）
   course: "ffFwIh", // 意向课程
   message: "fn8TJd", // 咨询内容
-  created: "fd5uVm", // 创建时间（日期/时间字段，传毫秒时间戳字符串）
+  created: "fcfKHk", // 创建时间（日期字段，field_id 来自企微表字段属性，传毫秒时间戳字符串）
 } as const
 
 function parseBody(req: VercelRequest): ConsultPayload {

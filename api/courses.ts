@@ -118,7 +118,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(200).json({ data: courses })
   } catch (err) {
     const message = err instanceof Error ? err.message : "Internal server error"
-    console.error("[courses api error]", message)
-    return res.status(500).json({ error: message })
+    // fetch failed 时打印 cause（ECONNRESET/ETIMEDOUT/DNS 等），方便 PM2 日志定位
+    const cause =
+      err instanceof Error && err.cause
+        ? err.cause instanceof Error
+          ? err.cause.message
+          : JSON.stringify(err.cause)
+        : ""
+    const detail = cause ? `${message} | cause: ${cause}` : message
+    console.error("[courses api error]", detail)
+    return res.status(500).json({ error: detail })
   }
 }
