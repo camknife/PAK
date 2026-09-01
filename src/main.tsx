@@ -9,6 +9,11 @@ import "./styles/index.css"
 // ─── 路由级代码分割：每个页面独立 chunk，按需加载 ────────────────────────────
 const App = lazy(() => import("./app/App.tsx"))
 const CoursePage = lazy(() => import("./app/CoursePage.tsx"))
+const EnHomePage = lazy(() => import("./app/EnHomePage.tsx"))
+const EnAboutPage = lazy(() => import("./app/EnAboutPage.tsx"))
+const EnContactPage = lazy(() => import("./app/EnContactPage.tsx"))
+const EnLiteraturePage = lazy(() => import("./app/EnLiteraturePage.tsx"))
+const EnFaqPage = lazy(() => import("./app/EnFaqPage.tsx"))
 // const AlumniPage = lazy(() => import("./app/AlumniPage.tsx")) // 治疗师目录模块暂缓
 const FaqPage = lazy(() => import("./app/FaqPage.tsx"))
 const ContactPage = lazy(() => import("./app/ContactPage.tsx"))
@@ -86,6 +91,27 @@ const PAGE_META: Record<string, { title: string; description?: string }> = {
     description:
       "PAK知识库：45种常见病症的PAK诊疗方法，从症状、原因、标准治疗到PAK评估视角，系统了解应用肌动学。",
   },
+  // 英文版（Hans 批注定稿）
+  "/en": {
+    title: "PAK Applied Kinesiology | Active and Balanced Physiotherapy Academy",
+    description:
+      "Professional Applied Kinesiology (PAK) certification training. Learn manual muscle testing, the Golden Triangle of Health, and the international certification path with ICAK/DÄGAK certified courses.",
+  },
+  "/en/course": {
+    title: "About PAK | What is Applied Kinesiology - Active and Balanced Physiotherapy Academy",
+    description:
+      "Applied Kinesiology (AK/PAK) is a holistic clinical assessment system founded by Dr. George Goodheart in 1964, using manual muscle testing to evaluate the structure, chemistry and psychology dimensions of health.",
+  },
+  "/en/contact": {
+    title: "Course Consultation - Active and Balanced Physiotherapy Academy",
+    description:
+      "Book a course consultation for PAK Applied Kinesiology certification training modules, online preparatory courses and international certification.",
+  },
+  "/en/faq": {
+    title: "FAQ | About PAK & Courses - Active and Balanced Physiotherapy Academy",
+    description:
+      "Answers to common questions about Applied Kinesiology (PAK), the course system, certification path, clinical techniques and registration.",
+  },
 }
 
 // 路由切换时同步 title / description / canonical
@@ -104,6 +130,13 @@ createRoot(document.getElementById("root")!).render(
     <CustomCursor />
     <Suspense fallback={<PageLoader />}>
       <Routes>
+        {/* 英文版（Hans 批注定稿） */}
+        <Route path="/en" element={<EnHomePage />} />
+        <Route path="/en/course" element={<EnAboutPage />} />
+        <Route path="/en/contact" element={<EnContactPage />} />
+        <Route path="/en/research" element={<EnLiteraturePage />} />
+        <Route path="/en/faq" element={<EnFaqPage />} />
+        {/* 中文版 */}
         <Route path="/" element={<App />} />
         <Route path="/course" element={<CoursePage />} />
         {/* <Route path="/pak-union" element={<AlumniPage />} /> // 治疗师目录模块暂缓 */}

@@ -8,6 +8,7 @@ import { resolve } from "path"
 const SITE_URL = "https://icak.com.cn"
 
 // 公开路由（不含已砍的 /pak-union）。预渲染页面加尾斜杠（Nginx 目录规范化会 301 到 /route/）。
+// 含英文版 /en、/en/course。
 const ROUTES = [
   "/",
   "/course",
@@ -17,6 +18,11 @@ const ROUTES = [
   "/student-scenes",
   "/course-center",
   "/knowledge",
+  "/en",
+  "/en/course",
+  "/en/contact",
+  "/en/research",
+  "/en/faq",
 ]
 
 const today = new Date().toISOString().split("T")[0]

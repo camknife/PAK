@@ -13,6 +13,14 @@ const links = [
   { label: "FAQ问答", href: "/faq" },
 ]
 
+// 英文模式导航：首页 + 关于PAK + FAQ（Hans 批注定稿页面，逐页扩展）
+const enLinks = [
+  { label: "Home", href: "/en" },
+  { label: "About PAK", href: "/en/course" },
+  { label: "Learning Materials", href: "/en/research" },
+  { label: "FAQ", href: "/en/faq" },
+]
+
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
@@ -20,12 +28,27 @@ export default function Navbar() {
   const isActive = (href: string) =>
     href.startsWith("/") && location.pathname === href
 
+  // 语言切换：当前是否在英文版（/en 前缀）
+  const isEn = location.pathname.startsWith("/en")
+
+  // 当前语言模式的导航链接（英文只显示两页，中文显示全部）
+  const navLinks = isEn ? enLinks : links
+
+  // 中/英互切目标：英文首页↔中文首页、英文About↔中文About，其余英文页回中文首页
+  const langTarget = isEn
+    ? location.pathname === "/en/course"
+      ? "/course"
+      : "/"
+    : location.pathname === "/course"
+      ? "/en/course"
+      : "/en"
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#F5F5F0]/95 backdrop-blur-sm border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#F5F5F0]/95 backdrop-blur-sm border-b border-border relative">
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <Link
-          to="/"
+          to={isEn ? "/en" : "/"}
           className="flex-shrink-0 flex items-center gap-3"
         >
           <div className="bg-[#4A7F7B] rounded-sm flex items-center justify-center py-2 px-3">
@@ -43,9 +66,9 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {links.map((link) =>
+        {/* Desktop nav：英文模式两标签绝对居中，中文模式默认布局 */}
+        <nav className={`hidden md:flex items-center gap-8 ${isEn ? "absolute left-1/2 -translate-x-1/2" : ""}`}>
+          {navLinks.map((link) =>
             link.href.startsWith("/") ? (
               <Link
                 key={link.label}
@@ -70,18 +93,24 @@ export default function Navbar() {
           )}
         </nav>
 
-        {/* CTA */}
-        <div className="hidden md:block">
+        {/* Right actions: language toggle + CTA（包在同一容器，gap 分隔） */}
+        <div className="hidden md:flex items-center gap-3">
+          <Link
+            to={langTarget}
+            className="inline-flex items-center px-3 py-2 text-sm font-['Noto_Sans_SC',sans-serif] font-medium rounded-sm border border-border text-[#6B6B62] hover:text-foreground hover:bg-[#E6E6E0] transition-colors duration-200"
+          >
+            {isEn ? "中文" : "EN"}
+          </Link>
           <Magnetic>
             <Link
-              to="/contact"
+              to={isEn ? "/en/contact" : "/contact"}
               className={`inline-flex items-center px-5 py-2.5 text-sm font-['Noto_Sans_SC',sans-serif] font-medium rounded-sm transition-colors duration-200 ${
-                isActive("/contact")
+                isActive(isEn ? "/en/contact" : "/contact")
                   ? "bg-[#4A7F7B] text-accent-foreground"
                   : "bg-accent text-accent-foreground hover:bg-[#4A7F7B]"
               }`}
             >
-              课程咨询
+              {isEn ? "Course Consultation" : "课程咨询"}
             </Link>
           </Magnetic>
         </div>
@@ -112,7 +141,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-[#F5F5F0] border-t border-border px-6 py-4 flex flex-col gap-4">
-          {links.map((link) =>
+          {navLinks.map((link) =>
             link.href.startsWith("/") ? (
               <Link
                 key={link.label}
@@ -137,11 +166,18 @@ export default function Navbar() {
             )
           )}
           <Link
-            to="/contact"
+            to={langTarget}
+            onClick={() => setOpen(false)}
+            className="inline-flex items-center justify-center px-5 py-2.5 border border-border text-foreground text-sm font-['Noto_Sans_SC',sans-serif] font-medium rounded-sm"
+          >
+            {isEn ? "切换到中文" : "Switch to English"}
+          </Link>
+          <Link
+            to={isEn ? "/en/contact" : "/contact"}
             onClick={() => setOpen(false)}
             className="inline-flex items-center justify-center px-5 py-2.5 bg-accent text-accent-foreground text-sm font-['Noto_Sans_SC',sans-serif] font-medium rounded-sm"
           >
-            课程咨询
+            {isEn ? "Course Consultation" : "课程咨询"}
           </Link>
         </div>
       )}

@@ -1,77 +1,77 @@
-﻿import { useState } from "react"
+import { useState } from "react"
 import { Link } from "react-router"
 import Navbar from "@/app/components/Navbar"
 import Footer from "@/app/components/Footer"
 import ScrollReveal from "@/app/components/ScrollReveal"
 
 const tabs = [
-  { key: "all", label: "全部" },
-  { key: "video", label: "教学视频" },
-  { key: "ima", label: "ima知识库" },
+  { key: "all", label: "All" },
+  { key: "video", label: "Videos" },
+  { key: "ima", label: "ima Knowledge Base" },
 ]
 
 const videos = [
   {
-    title: "损伤记忆技术 IRT 第一步",
+    title: "Injury Recall Technique (IRT) - Step 1",
     src: "https://icak-website.oss-cn-hangzhou.aliyuncs.com/assets/videos/2026-08/%E6%8D%9F%E4%BC%A4%E5%9B%9E%E5%BF%86%E6%8A%80%E6%9C%AFIRT%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A5%E9%AA%A4.mp4",
   },
   {
-    title: "触点",
+    title: "Contact Points",
     src: "https://icak-website.oss-cn-hangzhou.aliyuncs.com/assets/videos/2026-08/%E8%A7%A6%E8%AF%8A%E7%82%B9.mp4",
   },
   {
-    title: "膀胱 肾",
+    title: "Bladder & Kidney",
     src: "https://icak-website.oss-cn-hangzhou.aliyuncs.com/assets/videos/2026-08/%E8%86%80%E8%83%B1%20%E8%82%BE.mp4",
   },
-  // Hans 教授采访教学视频（新增，OSS 已上传）
+  // Hans Garten interview videos (added, hosted on OSS)
   {
-    title: "Hans教授 定稿采访一",
+    title: "Prof. Hans Garten Interview - Final I",
     src: "https://icak-website.oss-cn-hangzhou.aliyuncs.com/assets/videos/Hans%E6%95%99%E6%8E%88%E9%87%87%E8%AE%BF/Hans%E6%95%99%E6%8E%88%20%E5%AE%9A%E7%A8%BF%E9%87%87%E8%AE%BF%E4%B8%80.mp4",
   },
   {
-    title: "Hans教授采访 一",
+    title: "Prof. Hans Garten Interview I",
     src: "https://icak-website.oss-cn-hangzhou.aliyuncs.com/assets/videos/Hans%E6%95%99%E6%8E%88%E9%87%87%E8%AE%BF/Hans%E6%95%99%E6%8E%88-1.mp4",
   },
   {
-    title: "Hans教授采访 二",
+    title: "Prof. Hans Garten Interview II",
     src: "https://icak-website.oss-cn-hangzhou.aliyuncs.com/assets/videos/Hans%E6%95%99%E6%8E%88%E9%87%87%E8%AE%BF/Hans%E6%95%99%E6%8E%88-2.mp4",
   },
   {
-    title: "Hans教授采访 三",
+    title: "Prof. Hans Garten Interview III",
     src: "https://icak-website.oss-cn-hangzhou.aliyuncs.com/assets/videos/Hans%E6%95%99%E6%8E%88%E9%87%87%E8%AE%BF/Hans%E6%95%99%E6%8E%88-3.mp4",
   },
   {
-    title: "Hans教授采访 四",
+    title: "Prof. Hans Garten Interview IV",
     src: "https://icak-website.oss-cn-hangzhou.aliyuncs.com/assets/videos/Hans%E6%95%99%E6%8E%88%E9%87%87%E8%AE%BF/Hans%E6%95%99%E6%8E%88-4.mp4",
   },
   {
-    title: "Hans教授采访 五",
+    title: "Prof. Hans Garten Interview V",
     src: "https://icak-website.oss-cn-hangzhou.aliyuncs.com/assets/videos/Hans%E6%95%99%E6%8E%88%E9%87%87%E8%AE%BF/Hans%E6%95%99%E6%8E%88-5.mp4",
   },
   {
-    title: "Hans教授采访 六",
+    title: "Prof. Hans Garten Interview VI",
     src: "https://icak-website.oss-cn-hangzhou.aliyuncs.com/assets/videos/Hans%E6%95%99%E6%8E%88%E9%87%87%E8%AE%BF/Hans%E6%95%99%E6%8E%88-6.mp4",
   },
   {
-    title: "Hans教授采访 七",
+    title: "Prof. Hans Garten Interview VII",
     src: "https://icak-website.oss-cn-hangzhou.aliyuncs.com/assets/videos/Hans%E6%95%99%E6%8E%88%E9%87%87%E8%AE%BF/Hans%E6%95%99%E6%8E%88-7.mp4",
   },
   {
-    title: "Hans教授采访 八",
+    title: "Prof. Hans Garten Interview VIII",
     src: "https://icak-website.oss-cn-hangzhou.aliyuncs.com/assets/videos/Hans%E6%95%99%E6%8E%88%E9%87%87%E8%AE%BF/Hans%E6%95%99%E6%8E%88-8.mp4",
   },
   {
-    title: "Hans教授采访 九",
+    title: "Prof. Hans Garten Interview IX",
     src: "https://icak-website.oss-cn-hangzhou.aliyuncs.com/assets/videos/Hans%E6%95%99%E6%8E%88%E9%87%87%E8%AE%BF/Hans%E6%95%99%E6%8E%88-9.mp4",
   },
 ]
 
 const imaImages = [
-  { src: "/assets/ima下载.png", alt: "ima 下载" },
-  { src: "/assets/【PAK专业应用肌动学文献】知识码.png", alt: "PAK专业应用肌动学文献知识码" },
+  { src: "/assets/ima下载.png", alt: "ima Download" },
+  { src: "/assets/【PAK专业应用肌动学文献】知识码.png", alt: "PAK Literature Knowledge Code" },
 ]
 
-export default function LiteraturePage() {
+export default function EnLiteraturePage() {
   const [activeTab, setActiveTab] = useState("all")
   const [playingVideo, setPlayingVideo] = useState<string | null>(null)
 
@@ -88,10 +88,10 @@ export default function LiteraturePage() {
                 Learning Resources
               </p>
               <h1 className="font-['Noto_Serif_SC',serif] text-5xl lg:text-6xl font-semibold leading-[1.12] text-foreground mb-6">
-                学习资料
+                Learning Materials
               </h1>
               <p className="font-['Noto_Sans_SC',sans-serif] text-base text-[#6B6B62] leading-relaxed max-w-[620px]">
-                教学视频与 ima 知识库
+                Teaching videos and the ima knowledge base
               </p>
             </div>
           </section>
@@ -122,46 +122,48 @@ export default function LiteraturePage() {
               <div className="max-w-[1000px] mx-auto text-center">
                 <ScrollReveal>
                   <h2 className="font-['Noto_Serif_SC',serif] text-4xl lg:text-5xl font-semibold leading-[1.15] text-foreground mb-5">
-                    PAK 学习资料库 · 随身知识助手
+                    PAK Learning Library · Knowledge Assistant at Hand
                   </h2>
                   <p className="font-['Noto_Sans_SC',sans-serif] text-xl lg:text-2xl text-accent mb-12">
-                    把 PAK 经典教材与 22 册科普读物装进你的口袋
+                    Put the PAK textbooks and 22 popular science booklets in your pocket
                   </p>
                 </ScrollReveal>
 
                 <ScrollReveal delay={0.05}>
                   <div className="text-left bg-[#F5F5F0] border border-border rounded-sm p-10 lg:p-14 mb-8">
                     <h3 className="font-['Noto_Serif_SC',serif] text-2xl lg:text-3xl font-semibold text-foreground mb-5">
-                      什么是 ima 知识库
+                      What is the ima knowledge base
                     </h3>
                     <p className="font-['Noto_Sans_SC',sans-serif] text-lg lg:text-xl text-[#6B6B62] leading-relaxed mb-8">
-                      ima 是腾讯出品的 AI 智能知识管理助手。我们已将健衡学园的全部课程资料整理入库，
-                      你可以直接用「问答」的方式向 AI 提问，也可以随时翻阅、检索原文档——学 PAK，不用再翻箱倒柜找资料。
+                      ima is an AI-powered knowledge management assistant by Tencent. We have organized all
+                      of Active and Balanced Physiotherapy Academy's course materials into the library, so you can ask questions directly
+                      via Q&A, or browse and search the original documents anytime — learning PAK has never been easier.
                     </p>
 
                     <h3 className="font-['Noto_Serif_SC',serif] text-2xl lg:text-3xl font-semibold text-foreground mb-5">
-                      里面有什么
+                      What's inside
                     </h3>
                     <p className="font-['Noto_Sans_SC',sans-serif] text-lg lg:text-xl text-[#6B6B62] leading-relaxed mb-4">
-                      <strong className="text-foreground font-semibold">PAK 经典教材</strong>
-                      —— 体系化的专业教材，从理论基础到临床方法，逐章可查；
+                      <strong className="text-foreground font-semibold">PAK textbooks</strong>
+                      — systematic professional materials, from theory to clinical methods, searchable chapter by chapter;
                     </p>
                     <p className="font-['Noto_Sans_SC',sans-serif] text-lg lg:text-xl text-[#6B6B62] leading-relaxed mb-10">
-                      <strong className="text-foreground font-semibold">PAK 科普手册</strong>
-                      —— 22 本 PDF 科普读物，用通俗的语言讲清肌肉测试、结构与治疗逻辑，零基础也能读得懂。
+                      <strong className="text-foreground font-semibold">PAK popular science booklets</strong>
+                      — 22 PDF booklets that explain muscle testing, structure and treatment logic in plain language,
+                      accessible even to beginners.
                     </p>
 
                     <ul className="flex flex-col gap-4 font-['Noto_Sans_SC',sans-serif] text-lg lg:text-xl text-[#4A4A45]">
-                      <li>教材 + 科普 一站式整理，专业与入门都能覆盖</li>
-                      <li>AI 智能问答，随时解答你的 PAK 疑问</li>
-                      <li>手机/电脑随手查，学习资料常伴左右</li>
+                      <li>Textbooks + booklets in one place, covering both professional and beginner levels</li>
+                      <li>AI Q&A answers your PAK questions anytime</li>
+                      <li>Accessible on phone or computer — learning materials always with you</li>
                     </ul>
                   </div>
                 </ScrollReveal>
 
                 <ScrollReveal delay={0.1}>
                   <p className="font-['Noto_Serif_SC',serif] text-xl lg:text-2xl text-foreground mb-10">
-                    扫码加入知识库，开启你的 PAK 学习之旅
+                    Scan to join the knowledge base and start your PAK learning journey
                   </p>
                 </ScrollReveal>
 
@@ -217,7 +219,7 @@ export default function LiteraturePage() {
                         <h3 className="font-['Noto_Serif_SC',serif] text-lg font-semibold text-foreground mb-1">
                           {video.title}
                         </h3>
-                        <p className="font-['Noto_Sans_SC',sans-serif] text-sm text-[#9B9B90]">来源：ICAK</p>
+                        <p className="font-['Noto_Sans_SC',sans-serif] text-sm text-[#9B9B90]">Source: ICAK</p>
                       </div>
                     </button>
                   </ScrollReveal>
@@ -231,16 +233,16 @@ export default function LiteraturePage() {
         <section className="bg-[#E6E6E0] py-20 lg:py-28">
           <div className="max-w-[1200px] mx-auto px-6 text-center">
             <h2 className="font-['Noto_Serif_SC',serif] text-3xl lg:text-4xl font-semibold leading-[1.2] text-foreground mb-5">
-              需要更多学习支持？
+              Need more learning support?
             </h2>
             <p className="font-['Noto_Sans_SC',sans-serif] text-base text-[#6B6B62] mb-10 max-w-[520px] mx-auto leading-relaxed">
-              联系课程顾问，获取推荐书单与配套学习资料。
+              Contact our course consultant for recommended reading lists and supporting materials.
             </p>
             <Link
-              to="/contact"
+              to="/en/contact"
               className="inline-flex items-center px-8 py-4 bg-accent text-accent-foreground font-['Noto_Sans_SC',sans-serif] text-sm font-medium rounded-sm hover:bg-[#4A7F7B] transition-colors duration-200"
             >
-              课程咨询
+              Course Consultation
             </Link>
           </div>
         </section>
@@ -258,7 +260,7 @@ export default function LiteraturePage() {
           >
             <button
               onClick={() => setPlayingVideo(null)}
-              aria-label="关闭视频"
+              aria-label="Close video"
               className="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-[#1C1C1A]/70 text-[#F5F5F0] flex items-center justify-center hover:bg-[#1C1C1A] transition-colors duration-200"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">

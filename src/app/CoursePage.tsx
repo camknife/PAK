@@ -347,8 +347,8 @@ export default function CoursePage() {
                     <strong className="text-foreground font-medium">东方能量医学</strong>（经络、穴位理论）的新兴健康科学。
                   </p>
                   <p className="font-['Noto_Sans_SC',sans-serif] text-xl text-[#4A4A45] leading-[1.8]">
-                    其最核心的特征是使用<strong className="text-foreground font-medium">肌能检测</strong>作为生物反馈机制。
-                    与传统测量肌肉力量的"肌力测试"不同，肌能检测旨在评估神经系统对肌肉的实时控制能力。
+                    其最核心的特征是使用<strong className="text-foreground font-medium">徒手肌肉测试</strong>作为生物反馈机制。
+                    与传统测量肌肉力量的"肌力测试"不同，徒手肌肉测试旨在评估神经系统对肌肉的实时控制能力。
                     通过观察肌肉反应（扣紧或松软），获取意识之外的生理和能量失衡信息，从而指导诊断、评估疗效。
                   </p>
                 </div>
@@ -412,32 +412,8 @@ export default function CoursePage() {
                 意外恢复了肌肉功能，并使肩胛骨复位。
               </p>
               <p className="font-['Noto_Sans_SC',sans-serif] text-base text-[#4A4A45] leading-relaxed">
-                这一成功促使他将现代运动学中的肌肉检查与<strong className="text-foreground font-medium">查普曼神经淋巴反射点</strong>、
-                <strong className="text-foreground font-medium">贝内特血管反射点</strong>及
-                <strong className="text-foreground font-medium">中医经络穴位理论</strong>相结合，
-                构建了独特的"肌肉-经络-脏器"功能关系模型。
+                以此为起点，Goodheart 博士与其他众多 ICAK 认证讲师，整合了源自整骨医学、整脊医学、功能医学、针灸、营养医学（分子矫正医学）等众多领域的丰富知识与方法，开创了一套独特的整体医疗保健体系——这也是目前已知唯一真正意义上的整体医疗保健体系。
               </p>
-              <p className="font-['Noto_Sans_SC',sans-serif] text-base text-[#4A4A45] leading-relaxed">
-                其理论精髓在于：特定肌肉的功能状态（肌能检测结果）可以反映相应经络和内脏器官的健康状况。
-                这一模型为解读人体功能障碍提供了全新的、可验证的视角。
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-8">
-              {[
-                { title: "神经淋巴反射点", desc: "查普曼发现的体表反射点，与特定脏器功能相关" },
-                { title: "血管反射点", desc: "贝内特发现的血管反射区域，影响局部循环" },
-                { title: "经络穴位理论", desc: "融合中医经络体系，建立肌肉-脏器功能关联" },
-              ].map((item) => (
-                <div key={item.title} className="bg-[#F5F5F0] border border-border p-6 rounded-sm">
-                  <div className="w-2 h-2 rounded-full bg-accent mb-4" />
-                  <h4 className="font-['Noto_Serif_SC',serif] text-lg font-semibold text-foreground mb-2">
-                    {item.title}
-                  </h4>
-                  <p className="font-['Noto_Sans_SC',sans-serif] text-sm text-[#6B6B62] leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
           </ScrollReveal>
@@ -516,7 +492,7 @@ export default function CoursePage() {
               {[
                 { title: "清除肌肉骨骼功能障碍", desc: "对缓解颈肩腰腿痛等肌骨问题有良好的信度和效度，能精准定位并处理功能受限的肌肉。" },
                 { title: "缓解压力与调节身心", desc: "肌动学的核心功能之一是缓解身体、心理和情绪上的压力。通过调和程序，可改善因压力引发的各类问题。" },
-                { title: "提升注意力和学习效能", desc: "其分支「教育肌动学/健脑操」已证实能有效提升注意力、协调能力和学习效率。" },
+                { title: "改善代谢紊乱", desc: "改善代谢紊乱（内外毒素、激素失衡、慢性疲劳等能量代谢障碍）。" },
                 { title: "改善身心健康水平", desc: "通过恢复身体的能量平衡和结构功能，促进整体健康，化解焦虑。" },
               ].map((item) => (
                 <div key={item.title} className="bg-[#F5F5F0] p-7 flex flex-col gap-3">
@@ -536,121 +512,25 @@ export default function CoursePage() {
           <ScrollReveal>
             <div className="border-t border-border" />
 
-          {/* 06 新模式的演进 */}
+          {/* 06 AK与PAK的区别 */}
           <div>
             <p className="font-['Noto_Sans_SC',sans-serif] text-xs font-medium tracking-[0.15em] uppercase text-accent mb-4">
-              06 · 新模式的演进
-            </p>
-            <h2 className="font-['Noto_Serif_SC',serif] text-3xl lg:text-4xl font-semibold leading-[1.15] text-foreground mb-4">
-              从治疗模型到教育模型
-            </h2>
-            <p className="font-['Noto_Sans_SC',sans-serif] text-base text-[#6B6B62] leading-relaxed mb-8 max-w-[600px]">
-              应用肌动学在发展中分化出了多个经典的"新模式"，代表了从"治疗疾病"到"赋能个体"的理念变迁。
-            </p>
-            <div className="flex flex-col gap-6">
-              {[
-                {
-                  tag: "治疗模型",
-                  title: "应用肌动学（AK）",
-                  items: [
-                    { label: "侧重", text: "由专业医疗人员（如脊医）主导，精准诊断并治疗特定的生理功能障碍。" },
-                    { label: "核心技术", text: "复杂的肌能检测组合及多元矫正技术。" },
-                  ],
-                },
-                {
-                  tag: "自愈模型",
-                  title: "触康健肌动学（Touch for Health）",
-                  items: [
-                    { label: "侧重", text: "由施约翰脊医创立，将 AK 技术简化为大众可用的自我保健体系。强调责任自负和启动人体自愈能力，而非被动接受治疗。" },
-                    { label: "核心转变", text: "从「病人」到「调和人」，从「治疗」到「自我觉察」。" },
-                  ],
-                },
-                {
-                  tag: "教育模型",
-                  title: "教育肌动学（Educational Kinesiology / Brain Gym）",
-                  items: [
-                    { label: "侧重", text: "由保罗·丹尼逊博士创立，将肌动学应用于学习和个人成长领域。强调通过特定的运动程序（如健脑操）来促进大脑整合，提升学习能力，属于教育而非医疗范畴。" },
-                    { label: "核心转变", text: "从「解决问题」到「促进发育与学习」，调和过程以调和人主动参与运动为主。" },
-                  ],
-                },
-              ].map((model) => (
-                <div key={model.title} className="border border-border rounded-sm overflow-hidden">
-                  <div className="bg-[#F5F5F0] px-7 py-5 border-b border-border">
-                    <p className="font-['Noto_Sans_SC',sans-serif] text-xs font-medium tracking-[0.15em] text-accent mb-1">
-                      {model.tag}
-                    </p>
-                    <p className="font-['Noto_Serif_SC',serif] text-lg font-semibold text-foreground">
-                      {model.title}
-                    </p>
-                  </div>
-                  <div className="px-7 py-6 space-y-4">
-                    {model.items.map((item) => (
-                      <div key={item.label}>
-                        <p className="font-['Noto_Sans_SC',sans-serif] text-sm font-medium text-foreground mb-1">{item.label}</p>
-                        <p className="font-['Noto_Sans_SC',sans-serif] text-sm text-[#6B6B62] leading-relaxed">
-                          {item.text}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="border-t border-border" />
-
-          {/* 07 AK与PAK的区别 */}
-          <div>
-            <p className="font-['Noto_Sans_SC',sans-serif] text-xs font-medium tracking-[0.15em] uppercase text-accent mb-4">
-              07 · 概念辨析
+              06 · 概念辨析
             </p>
             <h2 className="font-['Noto_Serif_SC',serif] text-3xl lg:text-4xl font-semibold leading-[1.15] text-foreground mb-8">
-              AK 与 PAK 的区别
+              PAK（应用肌动学）与衍生方法
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-[#F5F5F0] border border-border rounded-sm p-6">
-                <h3 className="font-['Noto_Serif_SC',serif] text-lg font-semibold text-foreground mb-4">
-                  Applied Kinesiology (AK)
-                </h3>
-                <ul className="space-y-2.5">
-                  {[
-                    "面向所有医疗从业人员",
-                    "诊断与治疗系统",
-                    "结构-化学-心理三维度评估",
-                    "ICAK 国际认证体系",
-                    "基于 Goodheart 博士 60 余年研究",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-sm text-[#4A4A45]">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="bg-[#F5F5F0] border border-border rounded-sm p-6">
-                <h3 className="font-['Noto_Serif_SC',serif] text-lg font-semibold text-foreground mb-4">
-                  Professional Applied Kinesiology (PAK)
-                </h3>
-                <ul className="space-y-2.5">
-                  {[
-                    "仅限医疗专业人员学习与执业",
-                    "强调专业资质与伦理规范",
-                    "需要医学背景才能获得认证",
-                    "受 ICAK 监管与认证",
-                    "区别于非专业的肌动学实践",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-sm text-[#4A4A45]">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="bg-[#F5F5F0] border border-border rounded-sm p-6 lg:p-8 space-y-4">
+              <p className="font-['Noto_Sans_SC',sans-serif] text-base text-[#4A4A45] leading-relaxed">
+                <strong className="text-foreground font-medium">应用肌动学（AK）</strong>仅向医疗保健专业人员授课，因为它需要扎实的解剖学、生理学和生物化学知识基础。
+              </p>
+              <p className="font-['Noto_Sans_SC',sans-serif] text-base text-[#4A4A45] leading-relaxed">
+                <strong className="text-foreground font-medium">PAK 从业者</strong>这一头衔，须在完成 PAK 教育并通过专项考试后方可使用。
+              </p>
+              <p className="font-['Noto_Sans_SC',sans-serif] text-base text-[#4A4A45] leading-relaxed">
+                <strong className="text-foreground font-medium">触康健（Touch for Health）</strong>与<strong className="text-foreground font-medium">健脑操（Brain Gym）</strong>是面向大众教学、为大众所用的方法示例，它们在一定程度上使用了某种肌肉测试，但属于衍生方法，与 PAK 的专业定位有明确区分。
+              </p>
             </div>
           </div>
           </ScrollReveal>
@@ -661,7 +541,7 @@ export default function CoursePage() {
           {/* 08 DÄGAK课程体系 */}
           <div>
             <p className="font-['Noto_Sans_SC',sans-serif] text-xs font-medium tracking-[0.15em] uppercase text-accent mb-4">
-              08 · 课程体系
+              07 · 课程体系
             </p>
             <h2 className="font-['Noto_Serif_SC',serif] text-3xl lg:text-4xl font-semibold leading-[1.15] text-foreground mb-8">
               DÄGAK 认证课程体系 — 6 大模块 · 240 学时

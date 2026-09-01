@@ -7,10 +7,8 @@ gsap.registerPlugin(useGSAP)
 const TERMS = [
   "应用肌动学",
   "健康金三角",
-  "肌能检测",
+  "徒手肌肉测试",
   "DÄGAK",
-  "触康健",
-  "教育肌动学",
   "ICAK",
   "结构 · 化学 · 心理",
 ]

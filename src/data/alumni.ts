@@ -94,7 +94,7 @@ const alumniData: Alumni[] = [
     englishName: "VALERIAN LAM",
     title: "自然疗法医师",
     avatar: "",
-    bio: "香港自然疗法医师，拥有丰富的自然疗法临床经验。PAK 课程为其整合东西方医学理念提供了桥梁，将肌能检测融入自然疗法诊疗体系。",
+    bio: "香港自然疗法医师，拥有丰富的自然疗法临床经验。PAK 课程为其整合东西方医学理念提供了桥梁，将徒手肌肉测试融入自然疗法诊疗体系。",
     specialties: ["自然疗法", "整体医学", "能量医学"],
     location: "香港",
     graduationYear: 2025,
