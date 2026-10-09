@@ -122,11 +122,21 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-[#333330] pt-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-          <p className="font-['Noto_Sans_SC',sans-serif] text-xs text-[#4A4A45]">
-            {isEn
-              ? "© 2026 PAK (Applied Kinesiology) Active and Balanced Physiotherapy Academy. All rights reserved."
-              : "© 2026 PAK（应用肌动学） 健衡学园. 保留所有权利。"}
-          </p>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <p className="font-['Noto_Sans_SC',sans-serif] text-xs text-[#4A4A45]">
+              {isEn
+                ? "© 2026 PAK (Applied Kinesiology) Active and Balanced Physiotherapy Academy. All rights reserved."
+                : "© 2026 PAK（应用肌动学） 健衡学园. 保留所有权利。"}
+            </p>
+            <a
+              href="https://beian.miit.gov.cn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-['Noto_Sans_SC',sans-serif] text-xs text-[#4A4A45] hover:text-[#6B6B62] transition-colors duration-200"
+            >
+              豫ICP备2026002821号-3
+            </a>
+          </div>
           <div className="flex gap-5">
             {(isEn ? ["Privacy Policy", "Terms of Use", "Contact Us"] : ["隐私政策", "使用条款", "联系我们"]).map((l) => (
               <a
